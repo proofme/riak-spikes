@@ -67,11 +67,18 @@ As result it is produce  timeseries.jpg    file  that looks like
 And you can visually see  that long responses happens with some periodics
 
 ## Conclusion
-My understanding of situation:
+#### My understanding of situation:
 * In this test submap have unique keys, Riak when create SOLR document map it to plain structure  where each key  produce new filed `{KEY}_map.some_register`
 * So Total number of unique fields for indexing is growing in geometry progression. 
 * `10 root objects contains map with 10 unique submap keys, each contains 3 _registers =  300 unique field for indexing`
-* 
+
+ 
+#### Problems
+* Why  it happens periodicaly when I don't touch this index at all( test script search by second index that is empty )
+* Propably this issue should  be documented in section http://docs.basho.com/riak/latest/dev/search/search-data-types/ since there is very easy to come in this situation using both Maps&Search
+
+
+
 
 
 
